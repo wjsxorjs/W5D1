@@ -26,7 +26,12 @@ public class Ex2_Servlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		// 사용자가 전달하는 인자(파라미터) m_id를 받아서
+		// 변수 id에 저장하라 (한글은 깨진다)
+		String id = request.getParameter("m_id");
+		
+		// 받은 아이디를 다시 응답해 준다.
+		response.getWriter().println("<h1>"+id+"님 환영합니다.</h1>");
 	}
 
 	/**
